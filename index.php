@@ -68,27 +68,26 @@ try {
 
     $sql = "CREATE TABLE Utilisateur (
         id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(20) NOT NULL,
-    prenom Varchar(20) NOT NULL, 
-    email VARCHAR(50),adresse VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    adresse VARCHAR(60) NOT NULL,
-    code postal VARCHAR(10) NOT NULL,
-    pays VARCHAR (50) NOT NULL,
-    date_join TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        nom VARCHAR(20) NOT NULL,
+        prenom Varchar(20) NOT NULL, 
+        email VARCHAR(50),adresse VARCHAR(50) NOT NULL,
+        password VARCHAR(50) NOT NULL,
+        adresse VARCHAR(60) NOT NULL,
+        code postal VARCHAR(10) NOT NULL,
+        pays VARCHAR (50) NOT NULL,
+        date_join TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
 
     $conn->exec($sql);
 
     $sql = "CREATE TABLE produit (
-    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    titre VARCHAR(20) NOT NULL,
-    prix INT(20) DOUBLE NOT NULL,
-    description_courte VARCHAR(30) NOT NULL,
-    description_longue VARCHAR(60) NOT NULL 
+        id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        titre VARCHAR(20) NOT NULL,
+        prix INT(20) DOUBLE NOT NULL,
+        description_courte VARCHAR(30) NOT NULL,
+        description_longue VARCHAR(60) NOT NULL 
     )";
     $conn->exec($sql);
-
 }
 
 catch(PDOException $exception) {

@@ -63,7 +63,6 @@ $password = " ";
 $user = "root";
 
 try {
-
     $conn = new PDO("mysql:host = $server;$dbname;charset=utf8",$user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -79,6 +78,8 @@ try {
     date_join TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
 
+    $conn->exec($sql);
+
     $sql = "CREATE TABLE produit (
     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     titre VARCHAR(20) NOT NULL,
@@ -86,6 +87,7 @@ try {
     description_courte VARCHAR(30) NOT NULL,
     description_longue VARCHAR(60) NOT NULL 
     )";
+    $conn->exec($sql);
 
 }
 

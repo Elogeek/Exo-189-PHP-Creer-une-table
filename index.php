@@ -59,21 +59,21 @@
 // TODO Votre code ici.
 $dbname = "table_test_php";
 $server ="localhost";
-$password = " ";
+$password = "";
 $user = "root";
 
 try {
-    $conn = new PDO("mysql:host = $server;$dbname;charset=utf8",$user, $password);
+    $conn = new PDO("mysql:host = $server;dbname=$dbname;charset=utf8",$user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "CREATE TABLE Utilisateur (
         id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         nom VARCHAR(20) NOT NULL,
         prenom Varchar(20) NOT NULL, 
-        email VARCHAR(50),adresse VARCHAR(50) NOT NULL,
+        email VARCHAR(50) NOT NULL,
         password VARCHAR(50) NOT NULL,
         adresse VARCHAR(60) NOT NULL,
-        code postal VARCHAR(10) NOT NULL,
+        code_postal VARCHAR(10) NOT NULL,
         pays VARCHAR (50) NOT NULL,
         date_join TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
@@ -83,7 +83,7 @@ try {
     $sql = "CREATE TABLE produit (
         id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         titre VARCHAR(20) NOT NULL,
-        prix INT(20) DOUBLE NOT NULL,
+        prix DOUBLE NOT NULL,
         description_courte VARCHAR(30) NOT NULL,
         description_longue VARCHAR(60) NOT NULL 
     )";

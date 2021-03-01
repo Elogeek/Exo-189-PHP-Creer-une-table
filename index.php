@@ -59,14 +59,14 @@
 // TODO Votre code ici.
 $dbname = "table_test_php";
 $server ="localhost";
-$password = "";
+$password = "dev";
 $user = "root";
 
 try {
-    $conn = new PDO("mysql:host = $server;dbname=$dbname;charset=utf8",$user, $password);
+    $conn = new PDO("mysql:host=$server;dbname=$dbname;charset=utf8",$user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "CREATE TABLE Utilisateur (
+    $sql = "CREATE TABLE utilisateur (
         id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         nom VARCHAR(20) NOT NULL,
         prenom Varchar(20) NOT NULL, 
